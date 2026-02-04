@@ -1,3 +1,12 @@
+:root {
+    --primary: #2c3e50;
+    --secondary: #34495e;
+    --accent: #1abc9c;
+    --light: #ecf0f1;
+    --border: #bdc3c7;
+    --text: #555;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +21,7 @@ body {
 
 /* Header */
 .header {
-    background-color: #2c3e50;
+    background: var(--primary);
     color: white;
     padding: 20px 40px;
     display: flex;
@@ -22,7 +31,6 @@ body {
 
 .logo h1 {
     font-size: 28px;
-    font-weight: bold;
 }
 
 .social-links {
@@ -34,19 +42,19 @@ body {
     color: white;
     text-decoration: none;
     padding: 8px 15px;
-    background-color: #34495e;
+    background: var(--secondary);
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
-.social-icon:hover {
-    background-color: #1abc9c;
+.social-icon:hover,
+.menubar a:hover {
+    background: var(--accent);
 }
 
 /* Menubar */
 .menubar {
-    background-color: #34495e;
-    padding: 0;
+    background: var(--secondary);
 }
 
 .menubar ul {
@@ -55,20 +63,12 @@ body {
     justify-content: center;
 }
 
-.menubar li {
-    margin: 0;
-}
-
 .menubar a {
     color: white;
     text-decoration: none;
     padding: 15px 30px;
     display: block;
     transition: background-color 0.3s;
-}
-
-.menubar a:hover {
-    background-color: #1abc9c;
 }
 
 /* Container */
@@ -83,13 +83,13 @@ body {
 /* Sidebar */
 .sidebar {
     flex: 0 0 250px;
-    background-color: #ecf0f1;
+    background: var(--light);
     padding: 20px;
     border-radius: 5px;
 }
 
 .sidebar h3 {
-    color: #2c3e50;
+    color: var(--primary);
     margin-bottom: 20px;
     font-size: 22px;
 }
@@ -99,7 +99,7 @@ body {
 }
 
 .sidebar-item h4 {
-    color: #34495e;
+    color: var(--secondary);
     margin-bottom: 10px;
     font-size: 18px;
 }
@@ -110,8 +110,8 @@ body {
 
 .sidebar-item li {
     padding: 8px 0;
-    border-bottom: 1px solid #bdc3c7;
-    color: #555;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
 }
 
 .sidebar-item li:last-child {
@@ -127,14 +127,14 @@ body {
 }
 
 .content-box {
-    background-color: white;
+    background: white;
     padding: 25px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .content-box h2 {
-    color: #2c3e50;
+    color: var(--primary);
     margin-bottom: 15px;
     font-size: 24px;
 }
@@ -145,16 +145,19 @@ body {
     height: auto;
     margin: 15px 0;
     border-radius: 5px;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    background: var(--light);
 }
 
 .content-box p {
-    color: #555;
+    color: var(--text);
     line-height: 1.8;
 }
 
 /* Footer */
 .footer {
-    background-color: #2c3e50;
+    background: var(--primary);
     color: white;
     text-align: center;
     padding: 20px;
@@ -163,22 +166,18 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .container {
+    .container,
+    .menubar ul,
+    .header {
         flex-direction: column;
     }
 
     .sidebar {
-        flex: 1;
         width: 100%;
     }
 
     .header {
-        flex-direction: column;
         gap: 15px;
-    }
-
-    .menubar ul {
-        flex-direction: column;
     }
 
     .menubar a {
