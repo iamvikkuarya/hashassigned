@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- html code goes here -->
+    <div class='text-here' id='text-container'>This is some example text</div>
+
+    <input type="text" id="colorbox">
+    <button id="colorchange" onclick="changeColor()">Change Colour</button>
+
+    <br><br>
+
+    <input type="range" id="fontsize" min="10" max="100" value="55" oninput="changeFontSize()">
+    <br><br>
+
+    <button id="italic" class="stylebt" onclick="makeItalic()">Italics</button>
+    <button id="underline" class="stylebt" onclick="makeUnderline()">Underline</button>
+    <button id="bold" class="stylebt" onclick="makeBold()">Bold</button>
+
+    <br><br>
+
+    <select id="list" onchange="changeFont()">
+        <option value="serif">Serif</option>
+        <option value="sans-serif">Sans-Serif</option>
+        <option value="monospace">Monospace</option>
+        <option value="cursive">Cursive</option>
+        <option value="fantasy">Fantasy</option>
+    </select>
+
+    <br><br>
+
+    <button id="getstyle" onclick="getCSS()">Get CSS</button>
+
+    <br><br>
+    <p id="css-props"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
